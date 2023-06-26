@@ -71,3 +71,5 @@ const postRouter = createTRPCRouter({
       });
     }),
 });
+
+export { postRouter };
