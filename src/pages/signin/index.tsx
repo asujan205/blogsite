@@ -14,15 +14,19 @@ const SigninPage = () => {
   const handleSubmit = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    const res = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
-    if (res?.error) {
-      alert(res.error);
-    } else {
-      router.push("/dashboard");
+    try {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
+      });
+      if (res?.error) {
+        alert(res.error);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch (error) {
+      console.error("Error occurred during sign in:", error);
     }
     setIsLoading(false);
   };

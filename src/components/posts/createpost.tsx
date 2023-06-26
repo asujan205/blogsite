@@ -9,11 +9,21 @@ const CreatePost = () => {
   const { data: session, status } = useSession();
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
-  const [isCreating, setIsCreating] = React.useState(false);
+  //   const [isCreating, setIsCreating] = React.useState(false);
+
+  const { mutate, isLoading: isCreating } = api.post.create.useMutation({
+    onSuccess: () => {
+      router.replace("/");
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setIsCreating(true);
+    mutate({ title, content });
+    // setIsCreating(true);
     // await api.post.create({ title, content });
     // setIsCreating(false);
     // router.push("/");
