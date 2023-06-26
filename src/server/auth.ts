@@ -43,8 +43,17 @@ export const authOptions: NextAuthOptions = {
     session({ session, token }) {
       if (session.user) {
         // @ts-ignore
-        session.user.id = token.id as string;
-        session.user.email = token.email as string;
+        interface User {
+          id: string;
+          email: string;
+        }
+
+        // Cast session.user to the updated User type
+        const user = session.user as User;
+
+        // Now you can assign values to the id and email properties
+        user.id = token.id as string;
+        user.email = token.email as string;
       }
       return session;
     },
@@ -77,7 +86,7 @@ export const authOptions: NextAuthOptions = {
 
         const isValid = await bcrypt.compare(
           credentials.password,
-          user.password
+          user.password || ""
         );
 
         if (!isValid) {

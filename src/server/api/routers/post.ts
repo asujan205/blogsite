@@ -14,7 +14,7 @@ const postRouter = createTRPCRouter({
         data: {
           title: input.title,
           content: input.content,
-          authorId: ctx.session.user.id,
+          authorId: ctx.session?.user.id,
         },
       });
     }),
