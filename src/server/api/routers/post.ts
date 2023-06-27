@@ -33,6 +33,7 @@ const postRouter = createTRPCRouter({
   all: publicProcedure.query(async ({ ctx }) => {
     return ctx.prisma.post.findMany({
       select: {
+        id: true,
         title: true,
         content: true,
       },
