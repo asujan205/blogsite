@@ -4,9 +4,9 @@ import Link from "next/link";
 const Header: React.FC = () => {
   return (
     <>
-      <nav className="fixed left-0 top-0 z-20 w-full border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
+      <nav className="white:bg-gray-900 fixed left-0 top-0 z-20 w-full border-b border-gray-200 bg-white dark:border-gray-600">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-black">
             Home
           </span>
 

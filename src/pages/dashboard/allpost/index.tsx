@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { api } from "~/utils/api";
-import Header from "~/components/navbar/navbar";
 
 const ViewPost = () => {
   const { data: post, isLoading } = api.post.all.useQuery();
@@ -9,7 +8,6 @@ const ViewPost = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center gap-4">
-        <Header />
         <h1 className="text-2xl font-bold">View Post</h1>
 
         <div className="flex flex-col gap-4">
