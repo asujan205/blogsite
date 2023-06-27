@@ -5,12 +5,14 @@ import Link from "next/link";
 import { api } from "~/utils/api";
 import Signup from "./signup";
 
+import Dashboard from "./dashboard";
+
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
 
   return (
     <>
-      <Signup />
+      <Dashboard />
     </>
   );
 };
