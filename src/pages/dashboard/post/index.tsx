@@ -2,7 +2,7 @@ import React from "react";
 import { api } from "~/utils/api";
 
 const ViewPost = () => {
-  const { data: post, isLoading } = api.post.me.useQuery();
+  const { data: post, isLoading } = api.post.all.useQuery();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -20,3 +20,5 @@ const ViewPost = () => {
     </>
   );
 };
+
+export default ViewPost;

@@ -30,7 +30,7 @@ const postRouter = createTRPCRouter({
       },
     });
   }),
-  all: protectedProcedure.query(async ({ ctx }) => {
+  all: publicProcedure.query(async ({ ctx }) => {
     return ctx.prisma.post.findMany({
       select: {
         title: true,
@@ -70,7 +70,7 @@ const postRouter = createTRPCRouter({
         },
       });
     }),
-  viewOne: protectedProcedure
+  viewOne: publicProcedure
     .input(
       z.object({
         id: z.string(),
