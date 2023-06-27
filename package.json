@@ -23,6 +23,7 @@
     "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
     "superjson": "1.12.2",
     "tailwind-merge": "^1.13.2",
     "zod": "^3.21.4"

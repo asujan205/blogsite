@@ -22,7 +22,13 @@ const CreatePost = () => {
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    mutate({ title, content });
+
+    try {
+      mutate({ title, content });
+    } catch (error) {
+      console.log(error);
+    }
+
     // setIsCreating(true);
     // await api.post.create({ title, content });
     // setIsCreating(false);

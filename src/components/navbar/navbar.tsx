@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,6 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 
 const Header: React.FC = () => {
   const router = useRouter();
+
   const { data: session, status } = useSession();
 
   const handleCreate = () => {
