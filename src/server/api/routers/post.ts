@@ -25,6 +25,7 @@ const postRouter = createTRPCRouter({
         authorId: ctx.session.user.id,
       },
       select: {
+        id: true,
         title: true,
         content: true,
       },

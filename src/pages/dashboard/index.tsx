@@ -1,13 +1,14 @@
 import CreatePost from "~/components/posts/createpost";
 
 import React from "react";
-import ViewPost from "./post";
+import ViewPost from "./allpost";
 
 const Dashboard = () => {
   return (
     <>
-      <ViewPost />
-      <CreatePost />
+      <div className="flex flex-col items-center justify-center gap-4">
+        <ViewPost />
+      </div>
     </>
   );
 };

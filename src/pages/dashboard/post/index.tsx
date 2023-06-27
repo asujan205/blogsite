@@ -4,7 +4,7 @@ import { api } from "~/utils/api";
 
 const ViewPost = () => {
   const router = useRouter();
-  const { data: post, isLoading } = api.post.all.useQuery();
+  const { data: post, isLoading } = api.post.me.useQuery();
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
   const [openEdit, setOpenEdit] = React.useState(false);
