@@ -70,6 +70,19 @@ const postRouter = createTRPCRouter({
         },
       });
     }),
+  viewOne: protectedProcedure
+    .input(
+      z.object({
+        id: z.string(),
+      })
+    )
+    .query(async ({ ctx, input }) => {
+      return ctx.prisma.post.findUnique({
+        where: {
+          id: input.id,
+        },
+      });
+    }),
 });
 
 export { postRouter };
