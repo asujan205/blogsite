@@ -28,6 +28,13 @@ const postRouter = createTRPCRouter({
         id: true,
         title: true,
         content: true,
+        author: {
+          select: {
+            id: true,
+            email: true,
+          },
+        },
+        createdAt: true,
       },
     });
   }),

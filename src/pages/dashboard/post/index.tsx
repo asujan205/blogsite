@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { api } from "~/utils/api";
 import CreatePost from "~/components/posts/createpost";
+import Header from "~/components/navbar/navbar";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -49,33 +50,60 @@ const ViewPost = () => {
     <>
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-2xl font-bold">View Post</h1>
+        <Header />
 
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-4">
-            {post?.map((post) => (
-              <div key={post.id}>
-                <div className="flex flex-col gap-4">
-                  <h2 className="text-xl font-bold">{post.title}</h2>
-                  <p>{post.content}</p>
-                  <button
-                    className="rounded-md bg-indigo-500 px-4 py-2 text-white"
-                    onClick={() => handleEdit(post?.id)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="rounded-md bg-red-500 px-4 py-2 text-white"
-                    onClick={() => handleDelete(post?.id)}
-                  >
-                    Delete
-                  </button>
+        <div className="flex flex-row gap-4">
+          {post?.map((post) => (
+            <>
+              <div className="  min-h-[500px] w-[400px]  rounded-xl border font-semibold shadow-sm ">
+                {" "}
+                <div className="image">
+                  {/* <Image src="" width={300} height={160} alt="img" /> */}
+                </div>
+                <div className="info flex flex-col justify-between gap-4">
+                  <div className="cat flex flex-row justify-between gap-5 p-3">
+                    <a className="cursor-pointer text-orange-600 hover:text-orange-800">
+                      {post?.author?.email}
+                    </a>
+                    <a className="cursor-pointer text-gray-800 hover:text-gray-600">
+                      - {post?.createdAt.toISOString()}
+                    </a>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="title">
+                      <h1 className="cursor-pointer text-3xl font-bold text-gray-800 hover:text-gray-600 md:text-6xl">
+                        {post?.title || "Unknown"}
+                      </h1>
+                    </div>
+                    <div className="mt-4 min-h-[400px] w-full bg-gray-200 pl-3">
+                      <p className="text-gray-500">
+                        {post?.content || "description"}
+                      </p>
+                    </div>
+                    <div className="flex flex-row justify-evenly gap-10 p-3">
+                      <button
+                        className="rounded-md bg-indigo-500 px-4 py-2 text-white"
+                        onClick={() => handleEdit(post?.id)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="rounded-md bg-red-500 px-4 py-2 text-white"
+                        onClick={() => handleDelete(post?.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* { author ? <Author {...author}></Author> : <></>} */}
                 </div>
               </div>
-            ))}
-            <CreatePost />
-          </div>
+            </>
+          ))}
         </div>
       </div>
+
       {openEdit && (
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="text-2xl font-bold">Edit Post</h1>
