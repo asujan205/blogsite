@@ -7,11 +7,11 @@ import ViewPost from "./allpost";
 const Dashboard = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4">
-        <div className="flex flex-col gap-4">
+      <div className="justify-betwen flex flex-col items-center gap-20 ">
+        <div>
           <Header />
         </div>
-        <div className="flex flex-col gap-4">
+        <div>
           <ViewPost />
         </div>
       </div>

@@ -1,7 +1,15 @@
 import React from "react";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 const Header: React.FC = () => {
+  const router = useRouter();
+
+  const handleCreate = () => {
+    router.push("/dashboard/post");
+  };
+
   return (
     <>
       <nav className="white:bg-gray-900 fixed left-0 top-0 z-20 w-full border-b border-gray-200 bg-white dark:border-gray-600">
@@ -14,6 +22,7 @@ const Header: React.FC = () => {
             <button
               type="button"
               className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0"
+              onClick={handleCreate}
             >
               Create Article
             </button>

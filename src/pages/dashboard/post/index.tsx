@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { api } from "~/utils/api";
+import CreatePost from "~/components/posts/createpost";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -71,6 +72,7 @@ const ViewPost = () => {
                 </div>
               </div>
             ))}
+            <CreatePost />
           </div>
         </div>
       </div>
