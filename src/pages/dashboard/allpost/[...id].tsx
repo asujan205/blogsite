@@ -19,7 +19,7 @@ const ViewPost = () => {
           <Header />
         </div>
         <>
-          <div className="  min-h-[700px] w-[700px]  justify-center  rounded-xl border font-semibold shadow-sm ">
+          <div className="  flex min-h-full flex-1 flex-col justify-center rounded-xl border py-12 font-semibold shadow-sm sm:px-10 lg:px-12">
             {" "}
             <div className="image">
               {/* <Image src="" width={300} height={160} alt="img" /> */}
