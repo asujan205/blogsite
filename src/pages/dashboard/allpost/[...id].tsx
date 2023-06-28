@@ -2,6 +2,7 @@ import React from "react";
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
 import Header from "~/components/navbar/navbar";
+import Footer from "~/components/footer/footer";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const ViewPost = () => {
           <Header />
         </div>
         <>
-          <div className="  item-center min-h-[700px]  w-[700px]  rounded-xl border font-semibold shadow-sm ">
+          <div className="  min-h-[700px] w-[700px]  justify-center  rounded-xl border font-semibold shadow-sm ">
             {" "}
             <div className="image">
               {/* <Image src="" width={300} height={160} alt="img" /> */}
@@ -48,6 +49,7 @@ const ViewPost = () => {
           </div>
         </>
       </div>
+      <Footer />
     </>
   );
 };
