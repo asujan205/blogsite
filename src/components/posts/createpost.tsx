@@ -38,7 +38,7 @@ const CreatePost = () => {
   return (
     <>
       {!session ? (
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4">
           <h1 className="text-2xl font-bold">You must be signed in</h1>
           <button
             className="rounded-md bg-indigo-500 px-4 py-2 text-white"
@@ -52,13 +52,6 @@ const CreatePost = () => {
           {" "}
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-col items-center justify-center gap-4">
-              singOut :
-              <button
-                className="rounded-md bg-indigo-500 px-4 py-2 text-white"
-                onClick={() => signOut()}
-              >
-                Sign Out
-              </button>
               <h1 className="text-2xl font-bold">Create Post</h1>
               <form className="flex flex-col gap-4">
                 <input

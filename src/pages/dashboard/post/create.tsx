@@ -1,23 +1,19 @@
 import CreatePost from "~/components/posts/createpost";
 import Header from "~/components/navbar/navbar";
 
-import React from "react";
-import ViewPost from "./allpost";
-
-const Dashboard = () => {
+const CreatePage = () => {
   return (
     <>
-      <div className="justify-betwen flex flex-col items-center gap-20 ">
+      <div className="flex flex-col items-center justify-center gap-10">
         <div>
           <Header />
         </div>
-
         <div>
-          <ViewPost />
+          <CreatePost />
         </div>
       </div>
     </>
   );
 };
 
-export default Dashboard;
+export default CreatePage;

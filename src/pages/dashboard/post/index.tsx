@@ -55,9 +55,11 @@ const ViewPost = () => {
   console.log(post);
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-6">
+        <div>
+          <Header />
+        </div>
         <h1 className="text-2xl font-bold">View Post</h1>
-        <Header />
 
         <div className="flex flex-row gap-4">
           {post?.map((post) => (

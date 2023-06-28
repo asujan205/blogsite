@@ -30,6 +30,10 @@ const config = {
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/no-floating-promises": "off", // Disable the rule for floating promises
+    // "@typescript-eslint/no-unsafe-assignment": "off", // Disable the rule for unsafe assignment
+    // "@typescript-eslint/no-unsafe-call": "off", // Disable the rule for unsafe call
+    // "@typescript-eslint/no-misused-promises": "off", // Disable the rule for misused promises
+    // "@typescript-eslint/await-thenable": "off", // Disable the rule for await thenable
   },
 };
 

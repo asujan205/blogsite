@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { api } from "~/utils/api";
 import { cn } from "~/utils/cn";
+import Link from "next/link";
 
 const SignupPage = () => {
   const router = useRouter();
@@ -20,7 +21,11 @@ const SignupPage = () => {
   });
   const handleSubmit = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    mutate({ email, password });
+    try {
+      mutate({ email, password });
+    } catch (error) {
+      console.error("Signup error:", error);
+    }
   };
 
   return (
@@ -85,6 +90,19 @@ const SignupPage = () => {
                   >
                     {!isCreating ? "Create" : "Creating..."}
                   </button>
+                  <button
+                    type="button"
+                    className="mt-4 flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm"
+                    onClick={() => router.push("/dashboard")}
+                  >
+                    Cancel
+                  </button>
+                  <p className="my-4 text-center text-slate-700">
+                    Already have an account?{" "}
+                    <Link href="/signIn" className="underline">
+                      Sign In here
+                    </Link>
+                  </p>
                 </div>
               </div>
             </form>

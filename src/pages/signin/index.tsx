@@ -93,6 +93,12 @@ const SigninPage = () => {
                   >
                     {!isLoading ? "Log in" : "Login in..."}
                   </button>
+                  <button
+                    className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm"
+                    onClick={() => router.push("/dashboard")}
+                  >
+                    Cancel
+                  </button>
                 </div>
                 <p className="my-4 text-center text-slate-700">
                   Dont have an account?{" "}

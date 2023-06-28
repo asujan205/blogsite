@@ -6,6 +6,7 @@ import { api } from "~/utils/api";
 import Signup from "./signup";
 
 import Dashboard from "./dashboard";
+import Header from "~/components/navbar/navbar";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
