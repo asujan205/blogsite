@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
 
@@ -6,11 +6,20 @@ const Editpost = ({ setOpenEdit, id }: any) => {
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
   const router = useRouter();
+  const { data: post } = api.post.viewOne.useQuery({ id });
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      console.log(post?.title);
+    };
+
+    fetchPost();
+  }, [id]);
 
   const { mutate: updatePost, isLoading: isUpdating } =
     api.post.update.useMutation({
-      onSuccess: () => {
-        router.replace("/dashboard/post");
+      onSuccess: async () => {
+        await router.replace("/dashboard/post");
       },
       onError: (error) => {
         console.log(error);
@@ -27,13 +36,13 @@ const Editpost = ({ setOpenEdit, id }: any) => {
               type="text"
               placeholder="Title"
               className="rounded-md border border-gray-300 px-4 py-2"
-              value={title}
+              value={title || post?.title}
               onChange={(e) => setTitle(e.target.value)}
             />
             <textarea
               placeholder="Content"
               className="h-[200px] rounded-md border border-gray-300 px-4 py-2"
-              value={content}
+              value={(content || post?.content)?.toString() || ""}
               onChange={(e) => setContent(e.target.value)}
             />
             <button

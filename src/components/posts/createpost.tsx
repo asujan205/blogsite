@@ -50,19 +50,21 @@ const CreatePost = () => {
       ) : (
         <>
           {" "}
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div className="flex flex-col items-center justify-center gap-4">
-              <h1 className="text-2xl font-bold">Create Post</h1>
-              <form className="flex flex-col gap-4">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 ">
+            <div className="flex h-[500px] w-[500px] flex-col items-center justify-center gap-4">
+              <h1 className="text-2xl font-bold ">Create Post</h1>
+              <form className="flex h-full w-full flex-col gap-4">
                 <input
                   type="text"
                   placeholder="Title"
+                  required
                   className="rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) => setTitle(e.target.value)}
                 />
                 <textarea
                   placeholder="Content"
-                  className="rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  required
+                  className=" h-[300px]rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) => setContent(e.target.value)}
                 />
                 <button
