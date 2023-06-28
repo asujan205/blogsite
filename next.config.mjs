@@ -14,7 +14,6 @@ const config = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  target: "serverless",
 
   /**
    * If you have `experimental: { appDir: true }` set, then you must comment the below `i18n` config
