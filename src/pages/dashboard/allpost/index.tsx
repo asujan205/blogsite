@@ -4,6 +4,7 @@ import { api } from "~/utils/api";
 import Image from "next/image";
 
 const ViewPost = () => {
+  const router = useRouter();
   const { data: post, isLoading } = api.post.all.useQuery();
 
   return (
@@ -27,7 +28,12 @@ const ViewPost = () => {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="title">
-                    <h1 className="cursor-pointer text-3xl font-bold text-gray-800 hover:text-gray-600 md:text-6xl">
+                    <h1
+                      className="cursor-pointer text-3xl font-bold text-gray-800 hover:text-gray-600 md:text-6xl "
+                      onClick={() => {
+                        router.push(`/dashboard/allpost/${post.id}`);
+                      }}
+                    >
                       {post?.title || "Unknown"}
                     </h1>
                   </div>

@@ -97,6 +97,18 @@ const postRouter = createTRPCRouter({
         where: {
           id: input.id,
         },
+        select: {
+          id: true,
+          title: true,
+          content: true,
+          author: {
+            select: {
+              id: true,
+              email: true,
+            },
+          },
+          createdAt: true,
+        },
       });
     }),
 });
