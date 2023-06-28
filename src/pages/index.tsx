@@ -7,6 +7,7 @@ import Signup from "./signup";
 
 import Dashboard from "./dashboard";
 import Header from "~/components/navbar/navbar";
+import Footer from "~/components/footer/footer";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();

@@ -1,5 +1,6 @@
 import CreatePost from "~/components/posts/createpost";
 import Header from "~/components/navbar/navbar";
+import Footer from "~/components/footer/footer";
 
 const CreatePage = () => {
   return (
@@ -12,6 +13,7 @@ const CreatePage = () => {
           <CreatePost />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

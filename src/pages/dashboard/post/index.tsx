@@ -4,6 +4,7 @@ import { api } from "~/utils/api";
 import CreatePost from "~/components/posts/createpost";
 import Header from "~/components/navbar/navbar";
 import Editpost from "~/components/posts/Editpost";
+import Footer from "~/components/footer/footer";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -115,6 +116,7 @@ const ViewPost = () => {
       </div>
 
       {openEdit && <Editpost setOpenEdit={setOpenEdit} id={id} />}
+      <Footer />
     </>
   );
 };

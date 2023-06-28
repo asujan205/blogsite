@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { api } from "~/utils/api";
 import Image from "next/image";
+import Footer from "~/components/footer/footer";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const ViewPost = () => {
 
   return (
     <>
-      <div className="mt-15 flex-start flex flex-row flex-wrap items-center gap-10 p-10">
+      <div className="mt-15 flex-start flex flex-row flex-wrap  justify-center gap-10 p-10">
         {posts?.map((post) => (
           <div
             key={post.id}
@@ -35,7 +36,7 @@ const ViewPost = () => {
                   {post?.author?.email}
                 </a>
                 <a className="cursor-pointer text-gray-800 hover:text-gray-600">
-                  - {post?.createdAt.toISOString()}
+                  - {new Date(post?.createdAt).toLocaleDateString()}
                 </a>
               </div>
               <div className="flex flex-col items-center">
@@ -73,6 +74,7 @@ const ViewPost = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 };
