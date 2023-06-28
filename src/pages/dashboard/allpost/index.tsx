@@ -9,7 +9,7 @@ const ViewPost = () => {
 
   return (
     <>
-      <div className="mt-15 flex flex-row flex-wrap  justify-center gap-10 p-10">
+      <div className="mt-15 flex-start flex flex-row  flex-wrap items-center gap-10 p-10">
         {post?.map((post) => (
           <>
             <div className="  min-h-[500px] w-[400px]  rounded-xl border font-semibold shadow-sm ">
