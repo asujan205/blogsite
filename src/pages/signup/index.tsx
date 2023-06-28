@@ -19,10 +19,10 @@ const SignupPage = () => {
       console.log(error);
     },
   });
-  const handleSubmit = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
-      mutate({ email, password });
+      await mutate({ email, password });
     } catch (error) {
       console.error("Signup error:", error);
     }
