@@ -55,7 +55,7 @@ const ViewPost = () => {
   const handleDelete = async (id: string) => {
     try {
       await deletePost({ id });
-      router.push("/dashboard/post");
+      router.replace("/dashboard/post");
     } catch (error) {
       console.log(error);
     }
@@ -86,7 +86,7 @@ const ViewPost = () => {
                     <div className="border border-solid border-blue-800">
                       <Image
                         src={post.image}
-                        width={400}
+                        width={300}
                         height={30}
                         alt="img"
                       />
@@ -153,6 +153,7 @@ const ViewPost = () => {
       </div>
 
       {openEdit && <Editpost setOpenEdit={setOpenEdit} id={id} />}
+
       <Footer />
     </>
   );

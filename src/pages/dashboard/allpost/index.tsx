@@ -3,6 +3,7 @@ import React from "react";
 import { api } from "~/utils/api";
 import Image from "next/image";
 import Footer from "~/components/footer/footer";
+import Link from "next/link";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -33,8 +34,25 @@ const ViewPost = () => {
           >
             {" "}
             {post?.image && (
-              <div className="border border-solid border-blue-800">
-                <Image src={post.image} width={400} height={30} alt="img" />
+              <div className=" h-[350px] w-[400px] border border-solid  border-blue-800">
+                {/* <Image
+                  src={post.image}
+                  width={250}
+                  height={30}
+                  alt="img"
+                  className="rounded-t-xl"
+                /> */}
+                <div className="images relative">
+                  <Link href={`/dashboard/allpost/${post.id}`}>
+                    <Image
+                      src={post?.image}
+                      className="rounded"
+                      width={400}
+                      height={30}
+                      alt=""
+                    />
+                  </Link>
+                </div>
               </div>
             )}
             <div className="cat flex flex-row justify-between gap-5 p-3">
