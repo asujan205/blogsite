@@ -16,9 +16,9 @@ const Header: React.FC = () => {
       console.error("Create error:", error);
     }
   };
-  const handleLogout = async () => {
+  const handleLogout = () => {
     try {
-      await signOut();
+      signOut();
       router.push("/");
     } catch (error) {
       console.error("Logout error:", error);
