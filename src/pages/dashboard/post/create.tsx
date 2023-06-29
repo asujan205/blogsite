@@ -5,7 +5,7 @@ import Footer from "~/components/footer/footer";
 const CreatePage = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-10">
+      <div className="mt-10 flex flex-col items-center justify-center gap-10">
         <div>
           <Header />
         </div>

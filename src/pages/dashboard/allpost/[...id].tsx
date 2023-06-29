@@ -3,6 +3,7 @@ import { api } from "~/utils/api";
 import { useRouter } from "next/router";
 import Header from "~/components/navbar/navbar";
 import Footer from "~/components/footer/footer";
+import Image from "next/image";
 
 const ViewPost = () => {
   const router = useRouter();
@@ -11,6 +12,9 @@ const ViewPost = () => {
   const idString = postId as string;
 
   const { data: post } = api.post.viewOne.useQuery({ id: idString });
+  if (!post) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -21,8 +25,10 @@ const ViewPost = () => {
         <>
           <div className="  flex min-h-full flex-1 flex-col justify-center rounded-xl border py-12 font-semibold shadow-sm sm:px-10 lg:px-12">
             {" "}
-            <div className="image">
-              {/* <Image src="" width={300} height={160} alt="img" /> */}
+            <div className="image items-center">
+              {post?.image && (
+                <Image src={post.image} width={300} height={260} alt="img" />
+              )}
             </div>
             <div className="info flex flex-col justify-between gap-4">
               <div className="cat flex flex-row justify-between gap-5 p-3">

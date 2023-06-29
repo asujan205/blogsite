@@ -7,6 +7,7 @@ const postRouter = createTRPCRouter({
       z.object({
         title: z.string(),
         content: z.string(),
+        imageUrl: z.string(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -15,6 +16,7 @@ const postRouter = createTRPCRouter({
           title: input.title,
           content: input.content,
           authorId: ctx.session?.user.id,
+          image: input.imageUrl,
         },
       });
     }),
@@ -35,6 +37,7 @@ const postRouter = createTRPCRouter({
           },
         },
         createdAt: true,
+        image: true,
       },
     });
   }),
@@ -51,6 +54,7 @@ const postRouter = createTRPCRouter({
           },
         },
         createdAt: true,
+        image: true,
       },
     });
   }),
@@ -108,6 +112,7 @@ const postRouter = createTRPCRouter({
             },
           },
           createdAt: true,
+          image: true,
         },
       });
     }),

@@ -36,13 +36,13 @@ const Editpost = ({ setOpenEdit, id }: any) => {
               type="text"
               placeholder="Title"
               className="rounded-md border border-gray-300 px-4 py-2"
-              value={title || post?.title}
+              value={title ?? post?.title}
               onChange={(e) => setTitle(e.target.value)}
             />
             <textarea
               placeholder="Content"
               className="h-[200px] rounded-md border border-gray-300 px-4 py-2"
-              value={(content || post?.content)?.toString() || ""}
+              value={(content ?? post?.content)?.toString()}
               onChange={(e) => setContent(e.target.value)}
             />
             <button

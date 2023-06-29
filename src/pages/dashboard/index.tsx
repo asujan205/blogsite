@@ -3,6 +3,7 @@ import Header from "~/components/navbar/navbar";
 
 import React from "react";
 import ViewPost from "./allpost";
+import Footer from "~/components/footer/footer";
 
 const Dashboard = () => {
   return (
@@ -15,6 +16,9 @@ const Dashboard = () => {
         <div>
           <ViewPost />
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );
