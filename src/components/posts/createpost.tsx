@@ -152,6 +152,7 @@ const CreatePost = () => {
                   <input
                     id='fileInput'
                     type='file'
+                    required
                     accept='image/*'
                     onChange={handleImageChange}
                     className='hidden'
