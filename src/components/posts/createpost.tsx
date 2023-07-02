@@ -172,7 +172,7 @@ const CreatePost = () => {
             <button
               type='submit'
               className={cn(
-                'rounded-md bg-indigo-500 px-4 py-2 text-white',
+                'mt-10 rounded-md bg-indigo-500 px-4 py-2 text-white',
                 isCreating && 'cursor-not-allowed opacity-50'
               )}
               onClick={handleSubmit}
