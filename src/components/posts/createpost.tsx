@@ -46,7 +46,11 @@ const CreatePost = () => {
     setImageError(false)
   }
   const uploadImageToCloudinary = async () => {
-    if (!image) return null
+    if (!image) {
+      setImageError(true)
+
+      return null
+    }
     if (image.size > 10485760) {
       setImageError(true)
       return null
