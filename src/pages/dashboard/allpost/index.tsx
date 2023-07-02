@@ -27,7 +27,7 @@ const ViewPost = () => {
   return (
     <>
       <div className='mt-15 flex   justify-center  p-10'>
-        <div className=' flex-start ml-8 flex flex-row flex-wrap gap-10  '>
+        <div className=' flex-start ml-12 flex flex-row flex-wrap gap-10  '>
           {posts?.map((post) => (
             <div
               key={post.id}
